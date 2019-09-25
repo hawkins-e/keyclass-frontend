@@ -1,6 +1,6 @@
 import React from "react"
 import ChallengesList from "./ChallengesList"
-import Users from "./Users"
+import Users from "./UsersContainer"
 
 
 
@@ -11,6 +11,7 @@ class ChallengesContainer extends React.Component {
         super()
         this.state = {
             challengesArray: [],
+            selected: null 
         }
     }
 
