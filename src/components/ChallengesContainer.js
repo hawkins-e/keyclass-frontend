@@ -1,40 +1,42 @@
 import React from "react"
 import ChallengesList from "./ChallengesList"
+import Users from "./Users"
 
-const URL= "http://localhost:3000/challenges"
+
+
+const URL = "http://localhost:3000/challenges"
 
 class ChallengesContainer extends React.Component {
-    constructor(){
+    constructor() {
         super()
         this.state = {
             challengesArray: [],
         }
     }
 
-    componentDidMount(){
-        this.fetchChallenges()
+    componentDidMount() {
+        fetch(URL)
+            .then(response => response.json())
+            .then(challenges => {
+                    this.setState({
+                    challengesArray: challenges
+                })
+
+            })
+        
     }
 
-    fetchChallenges = () => {
-        fetch(URL)
-        .then(response => response.json())
-        .then(challenges => {
-            this.setState({
-                challengesArray: challenges
-            })
-        })
-        .catch(alert)
-    } 
-    
-    render(){
-        return(
-        <div> 
-        
-        <ChallengesList
-        challengesArray={this.state.challengesArray}
-        />
+    render() {
+        console.log(this.state.challengesArray)
+        return (
+            <div>
 
-        </div>
+                <ChallengesList
+                    challengesArray={this.state.challengesArray}
+                />
+                <Users />
+
+            </div>
 
         )
     }
