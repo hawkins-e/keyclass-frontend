@@ -60,6 +60,7 @@ class UsersContainer extends React.Component {
     }
 
     updateUsersArray = (updatedUser) => {
+        console.log(updatedUser)
         this.setState({
             //change this to prevState 
             usersArray: this.state.usersArray.map(user => {

@@ -6,8 +6,8 @@ const ChallengesList = (props) => {
     return (
         <ul>
             {props.challengesArray.map(challenge =>
-                <ChallengeItem key={challenge.id} challenge={challenge}
-                />)}
+                <ChallengeItem key={challenge.id} challenge={challenge}/>
+            )}
         </ul>
     )
 }
