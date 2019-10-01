@@ -5,6 +5,7 @@ import TypingTest from "./TypingTest"
 import Timer from "./Timer"
 import Photos from "./PhotoItem"
 import PhotoContainer from "./PhotoContainer"
+// import Typing from "./Typing"
 
 const URL = "http://localhost:3000/challenges"
 
@@ -114,6 +115,8 @@ class ChallengesContainer extends React.Component {
                 checkInput={this.checkInput}
                 calculateNumWords={this.calculateNumWords}
                 numWords={this.state.numWords} />
+
+                {/* <Typing /> */}
             </div>
 
         )
