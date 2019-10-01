@@ -1,6 +1,6 @@
 import React from 'react'
-import Timer from "./Timer"
-import Instructions  from "./Instructions"
+import Timer from "../Timer"
+import Instructions  from "../Instructions"
 import { Button } from 'semantic-ui-react'
 
 
@@ -18,7 +18,7 @@ class TypingTest extends React.Component {
     console.log("PROPS... ", this.props)
     return (
       <div className="App">
-      <Button>Click Here</Button>
+      
 
       <header className="App-header">
              <header>

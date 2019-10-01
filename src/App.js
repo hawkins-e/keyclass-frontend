@@ -1,17 +1,39 @@
 import React from 'react';
-import './App.css';
-// import 'semantic-ui-css/semantic.min.css'
-import ChallengesContainer from "./components/ChallengesContainer"
+import {BrowserRouter, Switch, Route, Link } from "react-router-dom"
+import Navbar from "./components/Navbar"
+import LoginPage from "./components/pages/LoginPage"
+import TypingTest from "./components/pages/TypingTest"
+import UserPage from "./components/pages/UserPage"
+import ChallengesContainer from './components/ChallengesContainer'
 
 
-function App() {
-  return (
-    <div className="App">
-      <header>
-        <ChallengesContainer />
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  
+  render(){
+    return(
+      <BrowserRouter>
+      <div>
+        <Navbar
+            color="green"
+            title="KeyClass"
+            description="let's type!"
+            icon="keyboard outline"/>
+
+        <div className="ui container grid">
+          <div id="content" className="sixteen wide column"></div>
+         
+          <Switch>
+            <Route path="/" exact component={LoginPage} />
+            <Route path="/:id" component={UserPage} />
+            <Route path="/typingtest" component={TypingTest} />
+          </Switch>
+        </div>
+      </div>
+      </BrowserRouter>
+  )
+ }
+  
 }
+
 
 export default App;
