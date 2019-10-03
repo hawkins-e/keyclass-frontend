@@ -4,11 +4,16 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "pretty-ms": "^5.0.0",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
     "react-select": "^3.0.5",
-    "react-typist": "^2.0.5"
+    "react-spring": "^8.0.27",
+    "react-typist": "^2.0.5",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^0.88.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -30,5 +35,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^2.2.0",
+    "webpack-cli": "^3.3.9"
   }
 }
