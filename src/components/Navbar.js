@@ -1,7 +1,6 @@
 import React from "react"
 import {Link} from "react-router-dom"
-
-
+import {Icon} from "react-router-dom"
 
 const Navbar = props => {
   return (
@@ -14,10 +13,7 @@ const Navbar = props => {
         </h2>
       </Link>
       <div className="right menu">
-  
-        <a className="item">
-          <div className="ui primary button">Sign Up</div>
-        </a>
+
       </div>
     </div>
   );

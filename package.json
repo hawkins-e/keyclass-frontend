@@ -10,10 +10,10 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.1.2",
     "react-select": "^3.0.5",
+    "react-spring": "^8.0.27",
     "react-typist": "^2.0.5",
     "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^0.88.1",
-    "webpack": "^4.41.0"
+    "semantic-ui-react": "^0.88.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^2.2.0",
     "webpack-cli": "^3.3.9"
   }
 }
