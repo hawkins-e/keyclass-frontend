@@ -1,20 +1,18 @@
 import React from "react"
 import {Link} from "react-router-dom"
-import {Icon} from "react-router-dom"
+import {Header, Icon} from "semantic-ui-react"
+
 
 const Navbar = props => {
   return (
-    <div className={`ui top fixed inverted ${props.color} menu`}>
+    <div className={`ui sticky-top inverted ${props.color} menu`}>
       <Link to="/typingtest" className="item">
-        <h2 className="ui header">
-          <i className={`${props.icon} icon`} />
+        <Header as="h2" size="medium"  icon>
+          <Icon name="keyboard outline" />
           <div className="content">{props.title}</div>
-          <div className="sub header">{props.description}</div>
-        </h2>
+          <div className="sub header">{"Type with Us!"}</div>
+        </Header>
       </Link>
-      <div className="right menu">
-
-      </div>
     </div>
   );
 };

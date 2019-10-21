@@ -1,33 +1,27 @@
 import React from "react";
+import {Header, Button} from "semantic-ui-react"
 
 class TypingTest extends React.Component {
   render() {
     console.log("PROPS... ", this.props);
     return (
-      <div className="App">
-        <header >
-          <header>
-            <h4>
-              {" "}
-              WORDS PER MINUTE: <span wpm>
-                {" "}
-                {this.props.wordsPerMinute}{" "}
-              </span>{" "}
+      <div className="App" style={{top:"60pxd",left: "0px", right:"200px"}}>
+        <Header size= "medium">Words Per Minute: {this.props.wordsPerMinute}</Header>
               <br />
               <span>
-                TIME REMAINING: <span> {this.props.timer} </span>{" "}
+        <Header size= "medium">Time Remaining: {this.props.timer}</Header>
               </span>
-            </h4>
-          </header>
-          <label> Choose Your Challenge: </label>
-          <br />
+          <br/>
+          <form>
+            <label><strong>
+             Choose a Challenge: 
           <select
-            value={this.props.selectedChallengeName}
+            className = "ui fluid selection dropdown"
+            value={this.props.value}
             onChange={e => {
               this.props.selectChallenge(e);
             }}
-            name="selectedChallenge"
-          >
+           >
             {this.props.challenges.map(challenge => {
               return (
                 <option
@@ -39,22 +33,29 @@ class TypingTest extends React.Component {
               );
             })}
           </select>
+          </strong>
+            </label> 
+          </form>
+        
           <br />
           <br />
-          <label>{this.props.selectedChallenge.learning_blurb}</label>
-          <form onSubmit={this.props.handleSubmit}>
-            <input
-              type="text"
-              placeholder="start typing..."
+          <Header as="h3">{this.props.selectedChallenge.learning_blurb}</Header>
+          <form className="ui form" onSubmit={this.props.handleSubmit}>
+            <textarea 
+              placeholder = "Start Typing Here..."
+              rows="3"
+              className="ui form"
               onChange={e => this.props.checkInput(e)}
               value={this.props.input}
             />
-            <input type="submit" value="Submit" />
+             <br />
+             <br />
+             <Button className="ui button" floated="left" input type="submit"  value="Submit"> submit </Button>
           </form>
-          <button onClick={event => this.props.handleResetSubmit(event)}>
-            Let's Play Again! 
-          </button>
-        </header>
+          <br/>
+          <Button color="blue" size="big" button floated="right" button onClick="window.location.href = 'http://localhost:3001/typingtest';">
+            Let's Play Again!
+          </Button>
       </div>
     );
   }
