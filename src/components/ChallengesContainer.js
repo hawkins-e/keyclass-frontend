@@ -7,8 +7,9 @@ import Photos from "./PhotoItem";
 import PhotoContainer from "./PhotoContainer";
 import ReactDOM from "react-dom"
 import PhotoCard from "./PhotoCard"
+import {Spring} from 'react-spring/renderprops'
+import ChallengeDropdown from "./ChallengeDropdown"
 
-const ms = require("pretty-ms");
 
 const URL = "http://localhost:3000/challenges";
 
@@ -17,16 +18,24 @@ class ChallengesContainer extends React.Component {
     super();
     this.state = {
       challengesArray: [],
-      selectedChallengeName: "",
+      selectedChallengeName: "Select A Challenge",
       selectedChallenge: {},
       currentIdx: 0,
       input: "",
       timer: 60,
       selectedChallengePhoto: [],
       selectChallengePhoto: [],
-      wordsPerMinute:0
+      wordsPerMinute:0,
+      content: false,
+      gameStarted: false,
+      value: "Select A Challenge",
     };
-    // this.checkEqual = this.checkEqual.bind(this)
+    
+  }
+
+  displayContent = (e) => {
+    e.preventDefault()
+    this.setState({ content: !this.state.content })
   }
 
   componentDidMount() {
@@ -38,6 +47,7 @@ class ChallengesContainer extends React.Component {
         });
       });
   }
+
 
   selectChallenge = event => {
     this.setState({
@@ -63,14 +73,14 @@ class ChallengesContainer extends React.Component {
     }
 
     handleResetSubmit=()=>{
-        this.setState({
-            gameStarted: false,
-            wordsPerMinute: 0, 
-            timer: 60,
-            input: " ",
-            selectedChallenge: []
-        })
-        console.log(this.state)
+      this.setState({
+      gameStarted: false,
+     wordsPerMinute: 0, 
+     timer: 60,
+     input: "",
+       selectedChallenge: []
+     })
+      
     }
 
     updateTimer=()=>{
@@ -89,16 +99,15 @@ class ChallengesContainer extends React.Component {
             wordsPerMinute: 0,
             timer: 60 
         })
-        
         this.interval = setInterval(this.updateTimer, 1000)
     }
     
 
     
     checkInput = e => {
-        if(
-            !this.state.gameStarted
-        ) {this.startGame()}
+      if(
+        !this.state.gameStarted
+    ) {this.startGame()}
 
         const letter = e.target.value[e.target.value.length - 1];
         if (
@@ -110,25 +119,19 @@ class ChallengesContainer extends React.Component {
                     currentIdx: prevState.currentIdx + 1
                 }));
             }
-        };
-        
-        // //splits the challenge blurb into an array of words for the wordsMastered category
-        // getChallengeBlurb = () => {
-        // console.log("I MADE IT!");
-        // const challengeBlurb = this.state.selectedChallenge.learning_blurb;
-        // const splitChallengeBlurb = challengeBlurb.split(" ");
-        // return splitChallengeBlurb
-    
+    };
 
     render() {
     // console.log("challenges... ", this.state.challengesArray)
     return (
       <div>
-        <div>
+        <div >
+        
           <PhotoContainer
             challenge={this.state.selectedChallenge}
             selectChallenge={this.selectChallenge}
-          />
+            />
+           
         </div>
 
         <br />
@@ -150,6 +153,8 @@ class ChallengesContainer extends React.Component {
             timer={this.state.timer}
             handleSubmit={this.handleSubmit}
             handleResetSubmit={this.handleResetSubmit}
+            default={this.state.default}
+            value={this.state.value}
           />
         </div>
       </div>
