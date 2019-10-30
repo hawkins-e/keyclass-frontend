@@ -2,6 +2,7 @@ import React from "react";
 import {Header, Button} from "semantic-ui-react"
 
 class TypingTest extends React.Component {
+  
   render() {
     console.log("PROPS... ", this.props);
     return (
@@ -17,7 +18,7 @@ class TypingTest extends React.Component {
              Choose a Challenge: 
           <select
             className = "ui fluid selection dropdown"
-            value={this.props.value}
+            value={this.props.challenge_name}
             onChange={e => {
               this.props.selectChallenge(e);
             }}
@@ -53,7 +54,7 @@ class TypingTest extends React.Component {
              <Button className="ui button" floated="left" input type="submit"  value="Submit"> submit </Button>
           </form>
           <br/>
-          <Button color="blue" size="big" button floated="right" button onClick="window.location.href = 'http://localhost:3001/typingtest';">
+          <Button color="blue" size="big" button floated="right" button onClick={this.props.letsPlayAgain}>
             Let's Play Again!
           </Button>
       </div>

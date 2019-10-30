@@ -1,18 +1,23 @@
 import React from "react";
-import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import Navbar from "./components/Navbar";
-import LoginPage from "./components/pages/LoginPage";
-import TypingTest from "./components/pages/TypingTest";
-import UserPage from "./components/pages/UserPage";
 import ChallengesContainer from "./components/ChallengesContainer";
-import { Icon } from "semantic-ui-react";
 import "./App.css";
 
 class App extends React.Component {
+  state = {
+    gameId: 1
+  };
+
+  resetGame = () =>
+    this.setState(prevState => ({
+      gameId: prevState.gameId + 1
+    }));
+
   render() {
     return (
       <BrowserRouter>
-        <div >
+        <div>
           <Navbar
             color="green"
             title="KeyClass"
@@ -20,14 +25,13 @@ class App extends React.Component {
             icon="keyboard outline"
           />
 
-          <div style={{padding:"10%"}} className="ui container grid">
+          <div style={{ padding: "10%" }} className="ui container grid">
             <div id="content" className="sixteen wide column"></div>
 
-            <Switch>
-              <Route path="/" exact component={LoginPage} />
-              <Route path="/users/:id" component={UserPage} />
-              <Route path="/typingtest" component={ChallengesContainer} />
-            </Switch>
+            <ChallengesContainer
+              key={this.state.gameId}
+              letsPlayAgain={this.resetGame}
+            />
           </div>
         </div>
       </BrowserRouter>

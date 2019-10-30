@@ -1,7 +1,6 @@
 import React from 'react'
 import PhotoItem from './PhotoItem'
 
-
 const PhotoList = (props) => {
     return (
         <ul>

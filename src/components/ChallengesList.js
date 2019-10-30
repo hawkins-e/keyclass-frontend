@@ -1,8 +1,6 @@
 import React from 'react'
 import ChallengeItem from './ChallengeItem'
 
-
-
 const ChallengesList = (props) => {
     return (
         <ul>

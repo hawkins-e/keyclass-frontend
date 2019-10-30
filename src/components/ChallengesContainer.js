@@ -1,15 +1,6 @@
 import React from "react";
-import ChallengesList from "./ChallengesList";
-import Users from "./UsersContainer";
 import TypingTest from "./pages/TypingTest";
-import Timer from "./Timer";
-import Photos from "./PhotoItem";
 import PhotoContainer from "./PhotoContainer";
-import ReactDOM from "react-dom"
-import PhotoCard from "./PhotoCard"
-import {Spring} from 'react-spring/renderprops'
-import ChallengeDropdown from "./ChallengeDropdown"
-
 
 const URL = "http://localhost:3000/challenges";
 
@@ -29,6 +20,7 @@ class ChallengesContainer extends React.Component {
       content: false,
       gameStarted: false,
       value: "Select A Challenge",
+      gameId: 1
     };
     
   }
@@ -48,6 +40,9 @@ class ChallengesContainer extends React.Component {
       });
   }
 
+  componentWillUnmount(){
+    clearInterval(this.interval)
+  }
 
   selectChallenge = event => {
     this.setState({
@@ -72,16 +67,6 @@ class ChallengesContainer extends React.Component {
         alert( "You typed " + wordsPerMinute + " words per minute")
     }
 
-    handleResetSubmit=()=>{
-      this.setState({
-      gameStarted: false,
-     wordsPerMinute: 0, 
-     timer: 60,
-     input: "",
-       selectedChallenge: []
-     })
-      
-    }
 
     updateTimer=()=>{
       let newTime = this.state.timer - 1;
@@ -101,8 +86,6 @@ class ChallengesContainer extends React.Component {
         })
         this.interval = setInterval(this.updateTimer, 1000)
     }
-    
-
     
     checkInput = e => {
       if(
@@ -140,6 +123,7 @@ class ChallengesContainer extends React.Component {
 
         <div>
           <TypingTest
+            key={this.state.gameId}
             challenges={this.state.challengesArray}
             selectedChallengeName={this.state.selectedChallengeName}
             selectChallenge={this.selectChallenge}
@@ -155,6 +139,7 @@ class ChallengesContainer extends React.Component {
             handleResetSubmit={this.handleResetSubmit}
             default={this.state.default}
             value={this.state.value}
+            letsPlayAgain={this.props.letsPlayAgain}
           />
         </div>
       </div>
