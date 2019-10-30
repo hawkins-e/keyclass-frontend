@@ -1,9 +1,5 @@
-// import React, { Component } from "react" ;
-import React, { useState } from 'react'
-import { Image } from "semantic-ui-react";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import React from 'react'
 import {useSpring, animated} from 'react-spring'
-
 
 function PhotoCard (props) {
     console.log(props)

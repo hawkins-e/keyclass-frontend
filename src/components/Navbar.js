@@ -2,7 +2,6 @@ import React from "react"
 import {Link} from "react-router-dom"
 import {Header, Icon} from "semantic-ui-react"
 
-
 const Navbar = props => {
   return (
     <div className={`ui sticky-top inverted ${props.color} menu`}>
@@ -17,5 +16,4 @@ const Navbar = props => {
   );
 };
  
-
 export default Navbar 

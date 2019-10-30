@@ -1,11 +1,6 @@
-
 import React from 'react'
-import { Image } from 'semantic-ui-react'
 import PhotoCard from "./PhotoCard"
-import PhotoAnimation from "./PhotoAnimation"
-import {Spring} from 'react-spring/renderprops'
-import styled from "styled-components" 
-
+ 
 const PhotoContainer = (props) => {
     return(
     <div>
