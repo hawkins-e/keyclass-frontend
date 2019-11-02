@@ -62,9 +62,9 @@ class ChallengesContainer extends React.Component {
         window.clearInterval(this.interval)
         const wordsPerMinute= (this.state.selectedChallenge.learning_blurb.split(" ").length * (60/(60 - this.state.timer)))
         this.setState({
-            wordsPerMinute: wordsPerMinute
+            wordsPerMinute: Math.round(wordsPerMinute)
         })
-        alert( "You typed " + wordsPerMinute + " words per minute")
+        alert( "You typed " + Math.round(wordsPerMinute) + " words per minute")
     }
 
 
