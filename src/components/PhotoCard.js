@@ -9,10 +9,12 @@ function PhotoCard (props) {
         opacity: 1, 
         config: {duration: 20000},
         reset: true,
-        from: {opacity: 0}})    
+        from: {opacity: 0},
+       
+    })    
     return (
         <div>
-        <animated.img style={styleProps} src={props.challenge_photo} width={900} height={500} />
+        <animated.img style={styleProps} src={props.challenge_photo} width={900} height={500} class={"ui massive rounded centered image"}  />
         </div>
     )
   

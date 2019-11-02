@@ -15,7 +15,8 @@ class TypingTest extends React.Component {
           <br/>
           <form>
             <label><strong>
-             Choose a Challenge: 
+          <br/>
+           <Header size="medium"> Choose a Challenge: </Header>  
           <select
             className = "ui fluid selection dropdown"
             value={this.props.challenge_name}
