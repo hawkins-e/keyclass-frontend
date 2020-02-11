@@ -8,6 +8,7 @@ I created this game with my childhood in mind as I had a similar program in my e
 js-standard-style
 
 **Screenshots**
+
 <img width="129" alt="Screen Shot 2019-12-23 at 2 21 43 PM" src="https://user-images.githubusercontent.com/46728814/74277641-8325d700-4cdd-11ea-8f64-ff70e4e3050c.png">
 
 <img width="1257" alt="Screen Shot 2019-11-11 at 9 48 01 PM" src="https://user-images.githubusercontent.com/46728814/74277668-8de06c00-4cdd-11ea-9493-5fc044499205.png">
