@@ -13,11 +13,11 @@ class TypingTest extends React.Component {
         <Header size= "medium">Time Remaining: {this.props.timer}</Header>
               </span>
           <br/>
-          <form>
-            <label><strong>
+          <form> 
+           <label><strong>
           <br/>
            <Header size="medium"> Choose a Challenge: </Header>  
-          <select
+          <select 
             className = "ui fluid selection dropdown"
             value={this.props.challenge_name}
             onChange={e => {
@@ -26,17 +26,20 @@ class TypingTest extends React.Component {
            >
             {this.props.challenges.map(challenge => {
               return (
+                
                 <option
                   key={challenge.challenge_name}
                   value={challenge.challenge_name}
+                  
                 >
                   {challenge["challenge_name"]}
                 </option>
+              
               );
             })}
           </select>
           </strong>
-            </label> 
+            </label>
           </form>
         
           <br />

@@ -19,10 +19,9 @@ class App extends React.Component {
       <BrowserRouter>
         <div>
           <Navbar
-            color="green"
+            color="blue"
             title="KeyClass"
-            description="let's type!"
-            icon="keyboard outline"
+
           />
 
           <div style={{ padding: "10%" }} className="ui container grid">
