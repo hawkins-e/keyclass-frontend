@@ -14,7 +14,7 @@ function PhotoCard (props) {
     })    
     return (
         <div>
-        <animated.img style={styleProps} src={props.challenge_photo} width={900} height={500} class={"ui massive rounded centered image"}  />
+        <animated.img style={styleProps} src={props.challenge_photo} width={700} height={300} class={"ui massive rounded centered image"}  />
         </div>
     )
   
