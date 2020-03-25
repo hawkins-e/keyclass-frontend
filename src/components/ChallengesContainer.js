@@ -2,7 +2,7 @@ import React from "react";
 import TypingTest from "./pages/TypingTest";
 import PhotoContainer from "./PhotoContainer";
 
-const URL = "http://localhost:3000/challenges";
+const URL = "https://key-klass-backend.herokuapp.com/";
 
 class ChallengesContainer extends React.Component {
   constructor() {
