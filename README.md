@@ -16,14 +16,11 @@ Semantic UI,
 Heroku 
 
 **How to Use:**
+
 1. Open KeyClass: https://keyclass-frontend.herokuapp.com/
-<br>
 2. Select a challenge from the dropdown box under the Choose A Challenge header. 
-<br>
 3. After selecting a challenge, move your cursor down to the input box. This is where you will type the challenge. 
-<br>
 4. Once you begin typing you need to type as quickly and as accuratley as possible, as the timer will start upon the first stroke within the input box. 
-<br>
 5. Last be sure to hit the submit button! This will cause the timer to stop and produce your overall typing speed in words per minute. 
 
 **Future Improvements:**
