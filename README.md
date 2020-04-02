@@ -1,7 +1,7 @@
 **KeyClass**
 KeyClass is a speed typing game that tests a user's typing speed and accuracy. 
 
-![KeyClass](https://user-images.githubusercontent.com/46728814/74704744-25aaf200-51d7-11ea-8c1d-b1e6337bceee.png)
+<img width="609" alt="KeyClassScreenshot" src="https://user-images.githubusercontent.com/46728814/78304130-a0b83580-7503-11ea-9783-2540d3425b29.png">
 
 **Motivation:**
 I created this game with my childhood in mind as I had a similar program in my elementary years that behaved in a similar fashion. This was originally created with children in mind but has proven to be a lot of fun for adults as well. 
