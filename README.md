@@ -10,16 +10,15 @@ I created this game with my childhood in mind as I had a similar program in my e
 js-standard-style
 
 **Tech/Framework Used:**
-React, 
+React,
 React-Spring, 
-Semantic UI 
+Semantic UI, 
+Heroku 
 
 **How to Use?**
-1.Before you open the link below first run the backend on your localhost: https://github.com/hawkins-e/key-klass-backend
-<br> 
-2. Open the frontend KeyClass: https://keyclass-frontend.herokuapp.com/
+1. Open KeyClass: https://keyclass-frontend.herokuapp.com/
 <br>
-3. To get started with the game, you'll first need to select a challenge from the dropdown box under the Choose A Challenge header. 
+2. Select a challenge from the dropdown box under the Choose A Challenge header. 
 <br>
 4. After selecting a challenge, move your cursor down to the input box. This is where you will type the challenge. 
 <br> 
@@ -28,7 +27,7 @@ Semantic UI
 6. Last be sure to hit the submit button! This will cause the timer to stop and produce your overall typing speed in words per minute. 
 
 #**Contribute**
-I would like to implement multi-player functionality. 
+I would like to implement multi-player functionality by utilizing web sockets. 
 
 #**License**
 MIT © Erica Hawkins 
